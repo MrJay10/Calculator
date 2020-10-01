@@ -8,7 +8,7 @@ from tkinter import *
 import math
 
 
-class Calc():
+class Calc:
     def __init__(self):
         self.total = 0
         self.current = ""
@@ -104,16 +104,25 @@ class Calc():
         self.current = -(float(text_box.get()))
         self.display(self.current)
 
+
 sum1 = Calc()
 root = Tk()
 calc = Frame(root)
 calc.grid()
 
 root.title("Calculator")
+
+# Setting Default Window Size 
+root.geometry("382x400")
+
+# Fixing the layout. 
+root.maxsize(382,395)
+root.minsize(382,395)
+
 text_box = Entry(calc, justify=RIGHT,width=30,font="Times 16 bold")
 text_box.grid(row = 0, column = 0,columnspan = 8,padx=30, pady = 30)
 text_box.insert(0, "0")
-#text_box.focus()
+# text_box.focus()
 
 numbers = "789456123"
 i = 0
